@@ -1,0 +1,48 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go build & cache files
+/bin/
+/build/
+/dist/
+*.o
+*.a
+
+# Go modules
+vendor/
+go.sum
+go.mod
+
+# Logs & Debugging
+*.log
+*.trace
+*.prof
+
+# Environment & Secrets
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.sublime-workspace
+
+# Docker files
+docker-compose.override.yml
+Dockerfile
+
+# Miscellaneous
+node_modules/
+coverage/
