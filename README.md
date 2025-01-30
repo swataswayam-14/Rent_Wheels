@@ -50,7 +50,7 @@ A Go-based backend service for managing vehicle rentals, featuring user authenti
 
 1. Clone the repository
 ```bash
-git clone <repository-url>
+git clone <https://github.com/swataswayam-14/Rent_Wheels.git>
 cd automobile-rental
 ```
 
