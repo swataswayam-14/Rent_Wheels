@@ -1,0 +1,35 @@
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(255) DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+);
+
+CREATE TABLE vehicles (
+    id SERIAL PRIMARY KEY,
+    make VARCHAR(255) NOT NULL,
+    model VARCHAR(255) NOT NULL,
+    year INT NOT NULL,
+    license_plate VARCHAR(255) UNIQUE NOT NULL,
+    daily_rate DECIMAL(10,2) NOT NULL,
+    status VARCHAR(50) DEFAULT 'available',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE bookings (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    vehicle_id INT REFERENCES vehicles(id) ON DELETE CASCADE,
+    start_date TIMESTAMP NOT NULL,
+    end_date TIMESTAMP NOT NULL,
+    total_cost DECIMAL(10,2) NOT NULL,
+    status VARCHAR(50) DEFAULT 'pending',
+    payment_id VARCHAR(255),
+    created_at TIMESTAMP CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP CURRENT_TIMESTAMP
+)
